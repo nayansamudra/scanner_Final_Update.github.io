@@ -1,0 +1,2429 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Free scanners to make trading accurate">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>Scanner Page</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+    <link href="https://nightly.datatables.net/css/jquery.dataTables.css" rel="stylesheet" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <link rel="icon" href="img/tci_blue.png" sizes="32x32" />
+    <link rel="icon" href="img/tci_blue.png" sizes="192x192" />
+    <style>
+        @media screen and (min-width: 768px) {
+
+            #Data_Des,
+            /* .Highest_Delivery_Menu, */
+            .Delivery_Spike_Menu,
+            #mobileleftpanel,
+            /* #Scanner_Left_Panel, */
+            #Data_Left_Panel,
+            /* #Scanner_options, */
+            #Calculator_options,
+            .RiskCalculatorDiscription,
+            #Risk_Cal_Body,
+            #Risk_Cal_Des,
+            #Cal_Left_Panel,
+            #Calculator_options,
+            #Data_options,
+            #CAGR_Cal_Des,
+            #SIP_Cal_Des,
+            #PIVOT_Cal_Des,
+            #EMI_Cal_Des,
+            #Income_Tax_Cal_Des,
+            #CAGR_Cal_Body,
+            #SIP_Cal_Body,
+            #PIVOT_Cal_Body,
+            #EMI_Cal_Body,
+            #Income_Tax_Cal_Body,
+            #FOForm,
+            #MobileRiskRadioButtonOption {
+                display: none;
+            }
+        }
+
+        @media screen and (max-width: 768px) {
+
+            #LaptopRiskRadioButtonOption,
+            #Data_Des,
+            #SIP_Cal_Des,
+            #PIVOT_Cal_Des,
+            #EMI_Cal_Des,
+            #Income_Tax_Cal_Des,
+            /* .Highest_Delivery_Menu, */
+            .Delivery_Spike_Menu,
+            .laptopleftpanel,
+            /* #Scanner_Left_Panel, */
+            #Data_Left_Panel,
+            /* #Scanner_options, */
+            .Scanner_opt_mobile
+            #Calculator_options,
+            .RiskCalculatorDiscription,
+            #Risk_Cal_Body,
+            #Risk_Cal_Des,
+            #Cal_Left_Panel,
+            #Calculator_options,
+            #Data_options,
+            #CAGR_Cal_Des,
+            #CAGR_Cal_Body,
+            #FOForm,
+            .top-advertisement,
+            .descriptionimage,
+            .card-text {
+                display: none;
+            }
+        }
+
+        .navbar-nav li {
+            position: relative;
+        }
+
+        .navbar-nav li a {
+            position: relative;
+            margin: 0 15px;
+            font-size: 16px;
+            line-height: 25px;
+            padding: 35px 0;
+            color: #000;
+            text-transform: capitalize;
+            font-weight: 500;
+            outline: none;
+            transition: .5s;
+        }
+
+        #navbar-nav-1 li a {
+            position: relative;
+            margin-top: 10px !important;
+            line-height: 25px;
+            padding-top: 20px !important;
+            padding-bottom: 20px !important;
+            font-weight: 500 !important;
+            font-size: 16px !important;
+        }
+
+        #navbar-nav-1 li {
+            /* height: 5rem; */
+            padding-top: 10px;
+        }
+
+        .menu-item-has-children:after {
+            position: absolute;
+            top: 7px;
+            right: -10px;
+            color: #263da5;
+            font-weight: bold;
+            font-family: "bootstrap-icons";
+            content: "\f282";
+            font-size: 16px;
+        }
+
+        .sub-menu-toggle {
+            display: none;
+        }
+
+        .sub-menu {
+            position: absolute;
+            left: 0;
+            top: 35px;
+            display: none;
+            list-style: none;
+            margin: 0;
+            background: #fff;
+            width: 180px;
+            padding: 0 0 10px 0;
+            border-top: 2px solid #324ed4;
+            border-radius: 0 0 10px 10px;
+        }
+
+        .sub-menu li a {
+            font-size: 14px;
+            color: #324ed4;
+            padding: 10px 0;
+        }
+
+        .navbar-nav li:hover .sub-menu {
+            display: block;
+        }
+
+        .custom-logo-link img {
+            max-height: 60px !important;
+        }
+
+
+        @media(max-width: 1024px) {
+            .sub-menu {
+                position: relative;
+                top: 0;
+                width: 100%;
+            }
+        }
+
+        @media(max-width: 767px) {
+            .navbar-nav li a {
+                display: block;
+                margin-left: 0;
+                padding: 10px 0;
+            }
+
+            .sub-menu {
+                position: relative;
+                top: 0;
+                width: 100%;
+            }
+        }
+
+        @media (min-width: 1800px) and (max-width: 2000px) {
+            .navbar-nav li a {
+                font-size: 20px;
+            }
+
+            #footer-sidebar1 p {
+                width: 95% !important;
+            }
+
+            .widget-title {
+                font-size: 20px !important;
+            }
+
+        }
+    </style>
+</head>
+
+<body style="background-color: #e7e7e7; font-family: 'Outfit', sans-serif;">
+
+    <div class="position-relative p-0" id="laptop_header" style="overflow-x: visible !important;">
+        <nav id="site-navigation" class="navbar navbar-expand-lg navbar-dark bg-light px-4 px-lg-5 py-3 py-lg-0">
+            <div class="container my-2 py-2">
+                <div class="site-logo"><span class="custom-logo-link"><img width="72" height="77" src="img/tci_blue.png"
+                            class="custom-logo" alt="" /></span></div>
+                <button class="navbar-toggler" type="button" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars" onclick="showhidetoggler()"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0 pe-4">
+                        <div class="menu-primary-container">
+                            <ul id="menu-primary" class="navbar-nav ms-auto py-0 pe-4">
+                                <li id="menu-item-10"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-10">
+                                    <a href="https://tradingcafeindia.com/" aria-current="page">Home</a>
+                                </li>
+                                <li id="menu-item-286"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-286"><a
+                                        href="https://tradingcafeindia.com/about-us/">About
+                                        Us</a></li>
+                                <!-- <li id="menu-item-12"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom current-menu-item current_page_item menu-item-home menu-item-12">
+                                    <a href="https://tradingcafeindia.com/mentorship/" aria-current="page">Courses</a>
+                                </li> -->
+                                <li id="menu-item-285"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-285"><a
+                                        href="https://tradingcafeindia.com/success-stories/">Success Stories</a></li>
+                                <li id="menu-item-284"
+                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-284"><a
+                                        href="https://blog.tradingcafeindia.com/">Blogs</a></li>
+                                <li id="menu-item-1143"
+                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-has-children menu-item-1143">
+                                    <a>Our Products</a>
+                                    <button class="sub-menu-toggle" aria-expanded="false"
+                                        onClick="twentytwentyoneExpandSubMenu(this)">
+                                        <span class="icon-plus">
+                                            <svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img"
+                                                focusable="false" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd"
+                                                    d="M18 11.2h-5.2V6h-1.6v5.2H6v1.6h5.2V18h1.6v-5.2H18z"
+                                                    fill="currentColor" />
+                                            </svg>
+                                        </span>
+                                        <span class="icon-minus">
+                                            <svg class="svg-icon" width="18" height="18" aria-hidden="true" role="img"
+                                                focusable="false" viewBox="0 0 24 24" fill="none"
+                                                xmlns="http://www.w3.org/2000/svg">
+                                                <path fill-rule="evenodd" clip-rule="evenodd" d="M6 11h12v2H6z"
+                                                    fill="currentColor" />
+                                            </svg>
+                                        </span>
+                                        <span class="screen-reader-text">Open menu</span>
+                                    </button>
+                                    <ul class="sub-menu">
+                                        <li id="menu-item-1138"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1138">
+                                            <a href="https://tredcode.tradingcafeindia.com/">Tredcode</a>
+                                        </li>
+                                        <!-- <li id="menu-item-1139"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1139">
+                                            <a
+                                                href="https://tradingcafeindia.com/mentorship">Mentorship</a>
+                                        </li> -->
+                                        <li id="menu-item-1140"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1140">
+                                            <a href="https://students.tradingcafeindia.com/">Students Portal</a>
+                                        </li>
+                                        <li id="menu-item-1141"
+                                            class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1141">
+                                            <a href="https://scanner.tradingcafeindia.com/">Scanner</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </nav>
+    </div>
+
+    <div class="position-relative p-0" id="mobile_header" style="overflow-x: visible !important;">
+        <nav id="site-navigation" class="navbar navbar-expand-lg navbar-light bg-light px-4 px-lg-5 py-3 py-lg-0">
+            <div class="container my-2 py-2">
+                <div class="site-logo"><span class="custom-logo-link"><img width="72" height="77" src="img/tci_blue.png"
+                            class="custom-logo" alt="" /></span></div>
+                <button class="navbar-toggler" type="button" data-bs-target="#navbar_Collapse">
+                    <span class="fa fa-bars" onclick="showhidetoggler()"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbar_Collapse">
+                    <div id="navbar-nav-1">
+                        <ul style="list-style: none;">
+                            <li><a href="https://tradingcafeindia.com/" aria-current="page"
+                                    style=" color: #000; text-decoration: none;">Home</a></li>
+                            <li><a href="https://tradingcafeindia.com/about-us/"
+                                    style=" color: #000; text-decoration: none;">About
+                                    Us</a></li>
+                            <!-- <li><a href="https://tradingcafeindia.com/mentorship/" aria-current="page"
+                                    style=" color: #000; text-decoration: none;">Courses</a>
+                            </li> -->
+                            <li><a href="https://tradingcafeindia.com/success-stories/"
+                                    style=" color: #000; text-decoration: none;">Success Stories</a>
+                            </li>
+                            <li><a href="https://blog.tradingcafeindia.com/"
+                                    style=" color: #000; text-decoration: none;">Blogs</a></li>
+                            <li>
+                                <div class="row pb-2">
+                                    <div class="col"><a style=" color: #000; text-decoration: none;">Our
+                                            Products</a></div>
+                                    <div class="col d-flex justify-content-end" onclick="showhidetoggler_for_product()">
+                                        <i class="bi bi-chevron-down"></i>
+                                    </div>
+                                </div>
+                                <ul class="sub-menu" id="sub_menu_toggler">
+                                    <li id="menu-item-1138"
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1138">
+                                        <a href="https://tredcode.tradingcafeindia.com/">Tredcode</a>
+                                    </li>
+                                    <!-- <li id="menu-item-1139"
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1139">
+                                        <a href="https://tradingcafeindia.com/mentorship">Mentorship</a>
+                                    </li> -->
+                                    <li id="menu-item-1140"
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1140">
+                                        <a href="https://students.tradingcafeindia.com/">Students Portal</a>
+                                    </li>
+                                    <li id="menu-item-1141"
+                                        class="menu-item menu-item-type-custom menu-item-object-custom menu-item-1141">
+                                        <a href="https://scanner.tradingcafeindia.com/">Scanner</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+        </nav>
+    </div>
+
+    <!-- TradingView Widget BEGIN -->
+    <div class="mt-5 container" id="Cal_Des_Widget" style="position: relative !important;">
+        <div class="mx-0 px-0 mt-0 pt-0 row boxshadow Cal_Des_Widget" style="width:100%">
+            <div class="mx-0 px-0 tradingview-widget-container">
+                <div class="tradingview-widget-container__widget"></div>
+                <script type="text/javascript"
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-ticker-tape.js" async>
+                        {
+                            "symbols": [
+                                {
+                                    "description": "Sensex",
+                                    "proName": "BSE:SENSEX"
+                                },
+                                {
+                                    "description": "Reliance",
+                                    "proName": "BSE:RELIANCE"
+                                },
+                                {
+                                    "description": "TCS",
+                                    "proName": "BSE:TCS"
+                                },
+                                {
+                                    "description": "ICICI Bank",
+                                    "proName": "BSE:ICICIBANK"
+                                },
+                                {
+                                    "description": "HDFC Bank",
+                                    "proName": "BSE:HDFCBANK"
+                                },
+                                {
+                                    "description": "BAJFIN",
+                                    "proName": "BSE:BAJFINANCE"
+                                },
+                                {
+                                    "description": "AsianPaints",
+                                    "proName": "BSE:ASIANPAINT"
+                                },
+                                {
+                                    "description": "INFY",
+                                    "proName": "BSE:INFY"
+                                },
+                                {
+                                    "description": "Maruti",
+                                    "proName": "BSE:MARU1!"
+                                },
+                                {
+                                    "description": "L&T",
+                                    "proName": "BSE:LT"
+                                },
+                                {
+                                    "description": "SBIN",
+                                    "proName": "BSE:SBIN"
+                                },
+                                {
+                                    "description": "ADANI ENT",
+                                    "proName": "BSE:ADANIENT"
+                                },
+                                {
+                                    "description": "RELIANCE",
+                                    "proName": "BSE:RELIANCE"
+                                },
+                                {
+                                    "description": "INFY",
+                                    "proName": "BSE:INFY"
+                                }
+                            ],
+                                "showSymbolLogo": true,
+                                    "colorTheme": "light",
+                                        "isTransparent": true,
+                                            "displayMode": "regular",
+                                                "locale": "in"
+                        }
+                    </script>
+            </div>
+        </div>
+        <div class="mx-0 px-0 mt-0 pt-0 row" id="widget_mobile_view">
+        </div>
+    </div>
+    <!-- TradingView Widget END -->
+
+    <div class="container" style="margin-top: 50px; margin-bottom: 50px; overflow-x: hide !important;" id="mainbody">
+        <div class="row my-5" id="mainrow">
+            <div class="col-md-3" id="leftpanelmargin">
+                <div class="row"
+                    style="cursor:pointer; margin-top: 0px; border-top-left-radius: 10px; border-top-right-radius: 10px;"
+                    id="Cal_Left_Panel">
+                    <div class="col-4 d-flex justify-content-center boxshadow" id="Cal_btn"><b>Calculators</b></div>
+                    <div class="col-4 link2_btn d-flex justify-content-center boxshadow" onclick="showscanner()">
+                        <b>Scanners</b>
+                    </div>
+                    <div class="col-4 link3_btn d-flex justify-content-center boxshadow" onclick="showdata()"><span
+                            class="Data_1" style="font-weight:bold">Data</span>
+                    </div>
+                </div>
+                <div class="row"
+                    style="cursor:pointer; margin-top: 0px; border-top-left-radius: 10px; border-top-right-radius: 10px;"
+                    id="Scanner_Left_Panel">
+                    <div class="col-4 link2_btn d-flex justify-content-center boxshadow" onclick="showcalculator()">
+                        <b>Calculators</b>
+                    </div>
+                    <div class="col-4 d-flex justify-content-center boxshadow" id="Scanner_btn"><b>Scanners</b></div>
+                    <div class="col-4 link3_btn d-flex justify-content-center boxshadow" onclick="showdata()"><span
+                            class="Data_1" style="font-weight:bold">Data</span>
+                    </div>
+                </div>
+                <div class="row"
+                    style="cursor:pointer; margin-top: 0px; border-top-left-radius: 10px; border-top-right-radius: 10px;"
+                    id="Data_Left_Panel">
+                    <div class="col-4 link2_btn d-flex justify-content-center boxshadow" onclick="showcalculator()">
+                        <b>Calculators</b>
+                    </div>
+                    <div class="col-4 link3_btn d-flex justify-content-center boxshadow" onclick="showscanner()">
+                        <b>Scanners</b>
+                    </div>
+                    <div class="col-4 d-flex justify-content-center boxshadow" id="Data_btn"><span class="Data_1"
+                            style="font-weight:bold">Data</span></div>
+                </div>
+                <div class="row boxshadow" style="border-radius: 10px;" id="Calculator_options">
+                    <div class="col" id="cal_opt">
+                        <div class="laptopleftpanel">
+                            <div class="row d-flex align-items-center" style="padding: 5%;" onclick="showriskcal()">
+                                <div class="col"
+                                    style="cursor:pointer; margin-top: 12px; border-radius: 4px; height: 40px; background-color: #324ed4; color:white; padding-left:5%; padding-top: 3%;">
+                                    <span onclick="showriskcal()" style="font-weight: bold;">RISK CALCULATOR</span>
+                                </div>
+                            </div>
+                            <div class="row d-flex align-items-center" style="padding: 5%;" onclick="showcagrcal()">
+                                <div class="col" id="showcagrcalculator"
+                                    style=" cursor:pointer; margin-top: 0px; border-radius: 4px; height: 40px; background-color: #324ed4; color:white; padding-left:5%; padding-top: 3%;">
+                                    <span onclick="showcagrcal()" style="font-weight: bold;">CAGR CALCULATOR</span>
+                                </div>
+                            </div>
+                            <div class="row d-flex align-items-center" style="padding: 5%;" onclick="showsipcal()">
+                                <div class="col" id="showsipcalculator"
+                                    style=" cursor:pointer; margin-top: 0px; border-radius: 4px; height: 40px; background-color: #324ed4; color:white; padding-left:5%; padding-top: 3%;">
+                                    <span onclick="showsipcal()" style="font-weight: bold;">SIP CALCULATOR</span>
+                                </div>
+                            </div>
+                            <div class="row d-flex align-items-center" style="padding: 5%;" onclick="showpivotcal()">
+                                <div class="col" id="showpivotcalculator"
+                                    style=" cursor:pointer; margin-top: 0px; border-radius: 4px; height: 40px; background-color: #324ed4; color:white; padding-left:5%; padding-top: 3%;">
+                                    <span onclick="showpivotcal()" style="font-weight: bold;">PIVOT POINT
+                                        CALCULATOR</span>
+                                </div>
+                            </div>
+                            <div class="row d-flex align-items-center" style="padding: 5%;" onclick="showemical()">
+                                <div class="col" id="showemicalculator"
+                                    style=" cursor:pointer; margin-top: 0px; border-radius: 4px; height: 40px; background-color: #324ed4; color:white; padding-left:5%; padding-top: 3%;">
+                                    <span onclick="showemical()" style="font-weight: bold;">EMI CALCULATOR</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row" id="mobileleftpanel">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col d-flex align-items-center justify-content-center mx-1 px-2 py-2 pt-2 text-center"
+                                        style=" cursor:pointer; border-radius: 4px; height:40px; width:40px; background-color: #324ed4; color:white; font-size:small">
+                                        <span class="align-middle" onclick="showriskcal()"
+                                            style="font-weight: bold;">RISK CALCULATOR</span>
+                                    </div>
+                                    <div class="col d-flex align-items-center justify-content-center mx-1 px-2 py-2 pt-2 text-center"
+                                        id="showcagrcalculator"
+                                        style=" cursor:pointer; border-radius: 4px; height:40px; width:40px; background-color: #324ed4; color:white; font-size:small">
+                                        <span class="align-middle" onclick="showcagrcal()"
+                                            style="font-weight: bold;">CAGR CALCULATOR</span>
+                                    </div>
+                                </div>
+                                <div class="row pt-2">
+                                    <div class="col d-flex align-items-center justify-content-center mx-1 px-2 py-2 pt-2 text-center"
+                                        id="showsipcalculator"
+                                        style=" cursor:pointer; border-radius: 4px; height:40px; width:40px; background-color: #324ed4; color:white; font-size:small">
+                                        <span class="align-middle" onclick="showsipcal()" style="font-weight: bold;">SIP
+                                            CALCULATOR</span>
+                                    </div>
+                                    <div class="col d-flex align-items-center justify-content-center mx-1 px-2 py-2 pt-2 text-center"
+                                        id="showPIVOTcalculator"
+                                        style=" cursor:pointer; border-radius: 4px; height:40px; width:40px; background-color: #324ed4; color:white; font-size:small">
+                                        <span class="align-middle" onclick="showpivotcal()"
+                                            style="font-weight: bold;">PIVOT POINT CALCULATOR</span>
+                                    </div>
+                                </div>
+                                <div class="row pt-2">
+                                    <div class="col d-flex align-items-center justify-content-center mx-1 px-2 py-2 pt-2 text-center"
+                                        id="showemicalculator"
+                                        style=" cursor:pointer; border-radius: 4px; height:40px; width:40px; background-color: #324ed4; color:white; font-size:small">
+                                        <span class="align-middle" onclick="showemical()" style="font-weight: bold;">EMI
+                                            CALCULATOR</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow" style="border-radius: 10px;" id="Scanner_options">
+                    <div class="col" id="Scanner_opt" style="border-top-left-radius: 5px;">
+                        <div class="row d-flex justify-content-center align-items-center" style="padding: 5%;">
+                            <div class=" col-md-10 Scanner_opt_laptop"
+                                style=" cursor:pointer; margin-top: 12px; border-top-left-radius: 4px; border-bottom-left-radius: 4px; height: 40px;background-color: #324ed4; color:white; padding-left:5%; padding-top: 3%;">
+                                <span style="font-weight: bold;">Delivery Scanner</span>
+                            </div>
+                            <div class="col-md-2 Scanner_opt_laptop"
+                                style="cursor:pointer; margin-top: 12px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; height: 40px;background-color: #324ed4;color:white; padding-left:5%; padding-top: 3%;">
+                                <span style="font-weight: bold;"> &#x25BC;</span>
+                            </div>
+                            <div class="row Scanner_opt_mobile" style="display: none;">
+                                <div class="col-10 d-flex align-items-center justify-content-center px-2 py-2 pt-2 text-center Scanner_opt_mobile"
+                                    style="cursor:pointer; margin-top: 12px; border-top-left-radius: 4px; border-bottom-left-radius: 4px; height: 40px;background-color: #324ed4; color:white; padding-left:5%; padding-top: 3%;">
+                                    <span style="font-weight: bold;">Delivery Scanner</span>
+                                </div>
+                                <div class="col-2 d-flex align-items-center justify-content-center px-2 py-2 pt-2 text-center Scanner_opt_mobile"
+                                    style="cursor:pointer; margin-top: 12px; border-top-right-radius: 4px; border-bottom-right-radius: 4px; height: 40px;background-color: #324ed4;color:white; padding-left:5%; padding-top: 3%;">
+                                    <span style="font-weight: bold;"> &#x25BC;</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mx-2 my-2 boxshadow d-flex align-items-center"
+                            id="Delivery_Scanner_Dropdown_Item"
+                            style="border-radius: 5px; background-color: rgb(245, 245, 245);">
+                            <div class="col-2 mx-2 my-2" id="symbol_highest_delivery"
+                                style=" color: #324ed4; font-weight: bolder;">
+                                <img src="img/HIGHESTDELIVERY.ico" height="20px" width="20px">
+                            </div>
+                            <div class="col-8 mx-2 my-2" id="Delivery_Scanner_Dropdown_1"
+                                style="cursor:pointer; color: #324ed4; font-weight: bolder;"
+                                onclick="showhighestdelivery()">
+                                Highest Delivery
+                            </div>
+                            <div class="col-2 mx-2 my-2" id="symbol_delivery_spike"
+                                style=" color: #888888; font-weight: bolder;">
+                                <img src="img/dELIVERYSPIKE.ico" height="20px" width="20px">
+                            </div>
+                            <div class="col-8 mx-2 my-2" id="Delivery_Scanner_Dropdown_2"
+                                style="cursor:pointer; color: #888888; font-weight: bolder;"
+                                onclick="showdeliveryspike()">
+                                Delivery Spike
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow" style="border-radius: 10px;" id="Data_options">
+                    <div class="col" id="Data_opt" style="border-top-right-radius: 0px;border-top-left-radius: 5px;">
+                        <div class="row d-flex align-items-center justify-content-center" style="padding: 5%;">
+                            <div class="col Data_opt_laptop"
+                                style="cursor:pointer; margin-top: 12px; border-radius: 4px; height: 40px; background-color: #324ed4; color:white; padding-left:5%; padding-top: 3%;">
+                                <span style="font-weight: bold;">FII / DII</span>
+                            </div>
+                            <div class="row Data_opt_mobile">
+                                <div class="col d-flex align-items-center justify-content-center text-center px-2 py-2 Data_opt_mobile"
+                                    style="cursor:pointer; margin-top: 12px; border-radius: 4px; height: 40px; background-color: #324ed4; color:white; padding-left:5%; padding-top: 3%;">
+                                    <span style="font-weight: bold;">FII / DII</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-9 Right_Panel">
+                <div class="row boxshadow Cal_Des" id="Data_Des">
+                    <div class="col">
+                        <div class="row">
+                            <div class="col" id="Datachart_1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col" id="Datachart_2"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col" id="Datachart_3"></div>
+                        </div>
+                        <div class="row" style="color:brown; font-weight: bold;">
+                            <div class="text-center">Detailed FII/DII Capital Market Activity (Values
+                                in Crores)</div>
+                            <div id="ChartDatatable">
+                                <table id="ChartDatatable_1" class="row-border">
+                                    <thead>
+                                        <tr>
+                                            <th class="text-center">Date</th>
+                                            <th class="text-center">FII Buy</th>
+                                            <th class="text-center">FII Sell</th>
+                                            <th class="text-center">FII Net</th>
+                                            <th class="text-center">In Market</th>
+                                            <th class="text-center">DII Net</th>
+                                            <th class="text-center">DII Buy</th>
+                                            <th class="text-center">DII Sell</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody id="FII/DII_Data"></tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Des" id="Risk_Cal_Des">
+                    <div class="col-md-2 descriptionimage" style="margin: auto;"><img src="img/Risk_Calculator.png"
+                            class="img-fluid rounded-start">
+                    </div>
+                    <div class="col-md-10 py-2">
+                        <h2 class="card-title"
+                            style="font-family: 'Outfit', sans-serif; font-weight:600;color: #181818;">
+                            <b>Risk / Position Size Calculator</b>
+                        </h2>
+                        <h6 class="card-subtitle" style="font-family: 'Outfit', sans-serif; font-weight:500;">
+                            <b>Calculating risk before enter a trade is important to ensure traders capital
+                                safety.</b>
+                        </h6>
+                        <p class="card-text" style=" font-family: 'Outfit', sans-serif; color:gray;">
+                            To use this risk calculator, enter your account capital, and the percentage of your
+                            account
+                            you wish to risk. Our
+                            calculator will suggest position sizes based on the information you provide.
+                        </p>
+                    </div>
+                </div>
+                <div class="row boxshadow Highest_Delivery_Menu">
+                    <div class="col">
+                        <div class="row px-2 py-2" id="HDIntroLaptopView">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-md-2 descriptionimage" style="margin: auto;"><img
+                                            src="img/HIGHEST_DELIVERY.png" class="img-fluid rounded-start">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="row px-2 py-2">
+                                            <div class="col">
+                                                <span style="font-weight:bolder; font-size: 30px;">Highest
+                                                    Delivery</span>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <input id="HDLaptop" class="form-check-input me-1"
+                                                    onclick="showhighestdeliveryfando()"
+                                                    name="highest_delivery_radio_button" type="radio" value="2"
+                                                    aria-label="..." checked>
+                                                <b style="font-size: 25px;">F & O</b>
+                                            </div>
+                                            <div class="col-md-3 text-center"><input class="form-check-input me-1"
+                                                    onclick="showhighestdeliverynifty()"
+                                                    name="highest_delivery_radio_button" type="radio" value="1"
+                                                    aria-label="...">
+                                                <b style="font-size: 25px;">Nifty500</b>
+                                            </div>
+                                        </div>
+                                        <div class="row px-2 py-2">
+                                            <div class="col">
+                                                <h6 style="color:#888888">Stocks which has the highest delivery
+                                                    compared
+                                                    to its last 20
+                                                    trading sessions</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row px-2 py-2" id="HDIntroMobileView">
+                            <div class="col">
+                                <div class="row py-2">
+                                    <div class="col d-flex justify-content-center">
+                                        <h1>Highest Delivery</h1>
+                                    </div>
+                                </div>
+                                <div class="row py-2">
+                                    <div class="col-6 text-center">
+                                        <input id="HDMobile" class="form-check-input me-1"
+                                            onclick="showhighestdeliveryfando()"
+                                            name="highest_delivery_radio_button_mobileview" type="radio" value="2"
+                                            aria-label="..." checked>
+                                        <b style="font-size: 20px;">F & O</b>
+                                    </div>
+                                    <div class="col-6 text-center"><input class="form-check-input me-1"
+                                            onclick="showhighestdeliverynifty()"
+                                            name="highest_delivery_radio_button_mobileview" type="radio" value="1"
+                                            aria-label="...">
+                                        <b style="font-size: 20px;">Nifty500</b>
+                                    </div>
+                                </div>
+                                <div class="row pl-3 py-2">
+                                    <div class="col text-center">
+                                        <h6 style="color:#888888">Stocks which has the highest delivery compared to
+                                            its
+                                            last 20
+                                            trading sessions</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row px-2 pb-3 HDDatatables">
+                            <table id="highestdeliverynifty500">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: left;">Name</th>
+                                        <th style="text-align: left;">LTP</th>
+                                        <th style="text-align: left;">Volume</th>
+                                        <th style="text-align: left;">Avg. Del %</th>
+                                        <th style="text-align: left;">Delivery (%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="HDdataniftyonly">
+                                </tbody>
+                            </table>
+                            <table id="highestdeliveryfando">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: left;">Name</th>
+                                        <th style="text-align: left;">LTP</th>
+                                        <th style="text-align: left;">Volume</th>
+                                        <th style="text-align: left;">Avg. Del %</th>
+                                        <th style="text-align: left;">Delivery (%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="HDdatafandoonly">
+                                </tbody>
+                            </table>
+                            <div class="row">
+                                <div class="col-sm strategy_video">Strategy Video 👉 <a href="https://www.youtube.com/watch?v=SU6HkrXjjKs&t=710s">click here</a></div>
+                                <div class="col-sm d-flex justify-content-end Date" style="margin-right:5px;" id="HDfandotimestamp"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Delivery_Spike_Menu">
+                    <div class="col">
+                        <div class="row px-2 py-2" id="DSIntroLaptopView">
+                            <div class="col">
+                                <div class="row">
+                                    <div class="col-md-2 descriptionimage" style="margin: auto;"><img
+                                            src="img/Delivery_spike.png" class="img-fluid rounded-start">
+                                    </div>
+                                    <div class="col-md-10">
+                                        <div class="row px-2 py-2">
+                                            <div class="col">
+                                                <span style="font-weight:bolder; font-size: 30px;">Delivery
+                                                    Spike</span>
+                                            </div>
+                                            <div class="col-md-3 text-center">
+                                                <input id="DSLaptop" class="form-check-input me-1"
+                                                    onclick="showdeliveryspikefando()"
+                                                    name="Delivery_spike_radio_button" type="radio" value="2"
+                                                    aria-label="..." checked>
+                                                <b style="font-size: 25px;">F & O</b>
+                                            </div>
+                                            <div class="col-md-3 text-center"><input class="form-check-input me-1"
+                                                    onclick="showdeliveryspikenifty()"
+                                                    name="Delivery_spike_radio_button" type="radio" value="1"
+                                                    aria-label="...">
+                                                <b style="font-size: 25px;">Nifty500</b>
+                                            </div>
+                                        </div>
+                                        <div class="row px-2 py-2">
+                                            <div class="col">
+                                                <h6 style="color:#888888">Stocks which has the highest delivery
+                                                    compared
+                                                    to yesterday</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row px-2 py-2" id="DSIntroMobileView">
+                            <div class="col">
+                                <div class="row py-2">
+                                    <div class="col d-flex justify-content-center">
+                                        <h1>Delivery Spike</h1>
+                                    </div>
+                                </div>
+                                <div class="row py-2">
+                                    <div class="col-6 text-center">
+                                        <input id="DSLaptop" class="form-check-input me-1"
+                                            onclick="showdeliveryspikefando()"
+                                            name="delivery_spike_radio_button_mobileview" type="radio" value="2"
+                                            aria-label="..." checked>
+                                        <b style="font-size: 20px;">F & O</b>
+                                    </div>
+                                    <div class="col-6 text-center"><input class="form-check-input me-1"
+                                            onclick="showdeliveryspikenifty()"
+                                            name="delivery_spike_radio_button_mobileview" type="radio" value="1"
+                                            aria-label="...">
+                                        <b style="font-size: 20px;">Nifty500</b>
+                                    </div>
+                                </div>
+                                <div class="row px-2 py-2">
+                                    <div class="col text-center">
+                                        <h6 style="color:#888888">Stocks which has the highest delivery compared
+                                            to yesterday</h6>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row px-2 pb-3" id="DSDatatables">
+                            <table id="deliveryspikenifty500">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: left;">Name</th>
+                                        <th style="text-align: left;">LTP</th>
+                                        <th style="text-align: left;">Avg. Del %</th>
+                                        <th style="text-align: left;">Delivery (%)</th>
+                                        <th style="text-align: left;">Increase in Delivery (%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="DSdataniftyonly">
+                                </tbody>
+                            </table>
+                            <table id="deliveryspikefando">
+                                <thead>
+                                    <tr>
+                                        <th style="text-align: left;">Name</th>
+                                        <th style="text-align: left;">LTP</th>
+                                        <th style="text-align: left;">Avg. Del %</th>
+                                        <th style="text-align: left;">Delivery (%)</th>
+                                        <th style="text-align: left;">Increase in Delivery (%)</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="DSdatafandoonly">
+                                </tbody>
+                            </table>
+                            <div class="row">
+                                <div class="col-sm strategy_video">Strategy Video 👉 <a href="https://www.youtube.com/watch?v=SU6HkrXjjKs&t=710s">click here</a></div>
+                                <div class="col-sm d-flex justify-content-end Date" id="DeliverySpikeTimestamp" style="margin-right:5px;"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Des" id="CAGR_Cal_Des">
+                    <div class="col-md-2 descriptionimage" style="margin: auto;"><img src="img/Cagr_Calc.png"
+                            class="img-fluid rounded-start">
+                    </div>
+                    <div class="col-md-10 py-2">
+                        <h2 class="card-title"
+                            style="font-family: 'Outfit', sans-serif; font-weight:600;color: #181818;">
+                            <b>CAGR /
+                                Reverse CAGR Calculator</b>
+                        </h2>
+                        <h6 class="card-subtitle" style="font-family: 'Outfit', sans-serif; font-weight:500;">
+                            <b>Compound annual growth rate (CAGR) is the mean annual growth rate over a specified
+                                time.</b>
+                        </h6>
+                        <p class="card-text" style="font-family: 'Outfit', sans-serif; color:gray;">
+                            CAGR
+                            tells you the average rate of return you have earned on your investments every
+                            year. CAGR is very useful for investors because it is an accurate measure of investment
+                            growth (or fall)
+                            over time.
+                        </p>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Des" id="SIP_Cal_Des">
+                    <div class="col-md-2 descriptionimage" style="margin: auto;"><img src="img/SIP-icon.jpg"
+                            class="img-fluid rounded-start">
+                    </div>
+                    <div class="col-md-10 py-2">
+                        <h2 class="card-title"
+                            style="font-family: 'Outfit', sans-serif; font-weight:600;color: #181818;">
+                            <b>SIP Calculator</b>
+                        </h2>
+                        <h6 class="card-subtitle" style="font-family: 'Outfit', sans-serif; font-weight:500;">
+                            <b>Take a step Closer to becoming financially free with SIP.</b>
+                        </h6>
+                        <p class="card-text" style="font-family: 'Outfit', sans-serif; color:gray;">
+                            A (SIP) Systematic Investment Plan calculator is an online financial tool that helps you to
+                            calculate the returns you would earn on your SIP investments. This tool also tells you how
+                            much you would need to invest every month to earn a target corpus.
+                        </p>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Des" id="PIVOT_Cal_Des">
+                    <div class="col-md-2 descriptionimage" style="margin: auto;"><img src="img/PIVOT_CAL.png"
+                            class="img-fluid rounded-start">
+                    </div>
+                    <div class="col-md-10 py-2">
+                        <h2 class="card-title"
+                            style="font-family: 'Outfit', sans-serif; font-weight:600;color: #181818;">
+                            <b>Pivot Point Calculator</b>
+                        </h2>
+                        <h6 class="card-subtitle" style="font-family: 'Outfit', sans-serif; font-weight:500;">
+                            <b>Calculate Pivot points of any index/stocks using this PIVOT points calculator</b>
+                        </h6>
+                        <p class="card-text" style="font-family: 'Outfit', sans-serif; color:gray;">
+                            As a technical analysis indicator, a pivot point uses a previous period’s high, low, and
+                            close price for a specific period to define future support and
+                            Resistance levels.
+
+                        </p>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Des" id="EMI_Cal_Des">
+                    <div class="col-md-2 descriptionimage" style="margin: auto;"><img src="img/EMI_CAL.png"
+                            class="img-fluid rounded-start">
+                    </div>
+                    <div class="col-md-10 py-2">
+                        <h2 class="card-title"
+                            style="font-family: 'Outfit', sans-serif; font-weight:600;color: #181818;">
+                            <b>EMI Calculator</b>
+                        </h2>
+                        <h6 class="card-subtitle" style="font-family: 'Outfit', sans-serif; font-weight:500;">
+                            <b>Calculate your monthly Installment for your Loan with This EMI calculator</b>
+                        </h6>
+                        <p class="card-text" style="font-family: 'Outfit', sans-serif; color:gray;">
+                            To use this Calculator, Enter the Loan Amount, The Loan tenure and the rate of interest.
+                            After filling the below fields you will get the amount you will have to pay per month.
+                        </p>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body" id="Risk_Cal_Body">
+                    <div class="row" style="margin-top: 20px;" id="LaptopRiskRadioButtonOption">
+                        <div class="col-md-2 text-center"><input id="RiskCalEquityLaptop" class="form-check-input me-1"
+                                onclick="displayequityform()" name="radio_button" type="radio" value="1"
+                                aria-label="..." checked>
+                            <b style="font-size: 20px;">Equity</b>
+                        </div>
+                        <div class="col-md-2 text-center">
+                            <input class="form-check-input me-1" onclick="displayfandoform()" name="radio_button"
+                                type="radio" value="2" aria-label="...">
+                            <b style="font-size: 20px;">F & O</b>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 20px;" id="MobileRiskRadioButtonOption">
+                        <div class="col-6 text-center"><input id="RiskCalEquityMobile" class="form-check-input me-1"
+                                onclick="displayequityform()" name="radio_button_1" type="radio" value="1"
+                                aria-label="..." checked>
+                            <b style="font-size: 20px;">Equity</b>
+                        </div>
+                        <div class="col-6 text-center">
+                            <input class="form-check-input me-1" onclick="displayfandoform()" name="radio_button_1"
+                                type="radio" value="2" aria-label="...">
+                            <b style="font-size: 20px;">F & O</b>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center" id="EquityForm">
+                        <div class="col-md vertical1">
+                            <form style="margin:15px; font-size: 17px;">
+                                Account Capital:<br>
+                                <input type="number" id="ac" required
+                                    style="margin-top: 10px; margin-bottom: 10px;"><br>
+                                <span id="acccap" class="form1"></span><br>
+                                Risk Per Trade (%):<br>
+                                <input type="text" id="rpt" required style="margin-top: 10px; margin-bottom: 10px;"><br>
+                                <span id="riskpertrade" class="form1"></span><br>
+                                Stoploss in rupees:<br>
+                                <input type="number" id="sir" required style="margin-top: 10px;"><br>
+                                <span id="stoplossinrupees" class="form1"></span><br>
+                                <button type="button" class="btn Equitybtn" id="Calequity" onClick="findEquity()"
+                                    style="margin-top: 20px;"><b>Calculate</b></button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn Equitybtn" onClick="clearEquity()"
+                                    style="margin-top: 20px;"><b>Clear</b></button><br><br>
+                            </form>
+                        </div>
+                        <div class="col-md">
+                            <form style=" font-size: 17px; margin: 25px;">
+                                <h1 style="font-family: 'Outfit', sans-serif;"><b>Result &nbsp;&nbsp;:</b></h1><br>
+                                <b>Amount at Risk:</b><br>
+                                <span id="Amountatrisk1"></span><br><br>
+                                <b>Total Qunatity</b><br>
+                                <span id="Totalquantity1"></span><br>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center" id="FOForm">
+                        <div class="col-md vertical">
+                            <form style="margin: 15px; font-size: 17px;">
+                                Account Capital:<br>
+                                <input type="number" id="ac1" required
+                                    style="margin-top: 10px; margin-bottom: 10px;" /><br>
+                                <span id="acccap1" class="form1"></span><br>
+                                Risk Per Trade (%):<br>
+                                <input type="text" id="rpt1" required
+                                    style="margin-top: 10px; margin-bottom: 10px;" /><br>
+                                <span id="riskpertrade1" class="form1"></span><br>
+                                Lot Size:<br>
+                                <input type="number" id="ls1" required
+                                    style="margin-top: 10px; margin-bottom: 10px;" /><br>
+                                <span id="lotsize1" class="form1"></span><br>
+                                Stoploss in rupees:<br>
+                                <input type="number" id="sir1" required style="margin-top: 10px" /><br>
+                                <span id="stoplossinrupees1" class="form1"></span><br>
+                                <button type="button" class="btn FObtn" onClick="findFO()"
+                                    style="margin-top: 20px;"><b>Calculate</b></button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn FObtn" onClick="clearFO()"
+                                    style="margin-top: 20px;"><b>Clear</b></button><br><br>
+                            </form>
+                        </div>
+                        <div class="col-md">
+                            <form style=" font-size: 17px; margin:25px">
+                                <h1 style="font-family: 'Outfit', sans-serif;"><b>Result &nbsp;&nbsp;:</b></h1><br>
+                                <b>Amount at Risk:</b><br>
+                                <span id="Amountatrisk2"></span><br><br>
+                                <b>No. of Lots</b><br>
+                                <span id="Nooflots2"></span><br><br>
+                                <b>Total Quantity</b><br>
+                                <span id="Totalquantity2"></span><br>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body" id="CAGR_Cal_Body">
+                    <div class="row" style="margin-top: 20px;" id="LaptopCAGRRadioButtonOption">
+                        <div class="col-md-2 text-center"><input id="CAGRCalCAGRLaptop" class="form-check-input me-1"
+                                onclick="displaycagrform()" name="radiobutton" type="radio" value="1" aria-label="..."
+                                checked>
+                            <b style="font-size: 20px;">CAGR</b>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <input class="form-check-input me-1" onclick="displayreversecagrform()" name="radiobutton"
+                                type="radio" value="2" aria-label="...">
+                            <b style="font-size: 20px;">Reverse CAGR</b>
+                        </div>
+                    </div>
+                    <div class="row" style="margin-top: 20px;" id="MobileCAGRRadioButtonOption">
+                        <div class="col-6 text-center"><input id="CAGRCalCAGRMobile" class="form-check-input me-1"
+                                onclick="displaycagrform()" name="radiobutton1" type="radio" value="1" aria-label="..."
+                                checked>
+                            <b style="font-size: 20px;">CAGR</b>
+                        </div>
+                        <div class="col-6 text-center">
+                            <input class="form-check-input me-1" onclick="displayreversecagrform()" name="radiobutton1"
+                                type="radio" value="2" aria-label="...">
+                            <b style="font-size: 20px;">Reverse CAGR</b>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center" id="CAGRForm">
+                        <div class="col-md vertical2">
+                            <form style="margin:15px; font-size: 17px;">
+                                Initial Amount: <br>
+                                <input type="number" id="ia" required
+                                    style="margin-top: 10px; margin-bottom: 10px;" /><br>
+                                <span id="initialamount" class="form1"></span><br>
+                                Final Amount: <br>
+                                <input type="number" id="fa" required
+                                    style="margin-top: 10px; margin-bottom: 10px;" /><br>
+                                <span id="finalamount" class="form1"></span><br>
+                                Duration (yrs.):<br>
+                                <input type="number" id="dur" required style="margin-top: 10px;" /><br>
+                                <span id="duration" class="form1"></span><br>
+                                <button type="button" class="btn CAGRbtn" id="add"
+                                    style="margin-top: 20px;"><b>Calculate</b></button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn CAGRbtn" onClick="clearCAGR()" id="remove"
+                                    style="margin-top: 20px;"><b>Clear</b></button><br><br>
+                            </form>
+                        </div>
+                        <div class="col-md answercagr" id="transparentcontainer"
+                            style="background-color:rgb(249, 249, 249);margin-left: 25px;margin-bottom: 25px; border-radius: 10px;">
+                            <div class="row">
+                                <div class="col-md-2" id="CAGRText" style="margin-top: 15px; margin-left: 10px;">
+                                    <b>CAGR</b>
+                                </div>
+                                <div class="col-md-3 d-flex justify-content-center align-items-center"
+                                    id="CAGRAnswerinLabel"
+                                    style="border-radius: 6px; height: 26px; background-color: #324ed4; color:white; margin-top: 12px;">
+                                    <b><span id="CAGRanswer"></span></b>
+                                </div>
+                            </div>
+                            <div class="" id="CAGRchart" style="margin-top: 35px; width:100%; height:100%; left:0%">
+                            </div>
+                            <div id="TransparentCAGRchart" style="margin-top: 35px; width:100%; height:100%"></div>
+                        </div>
+                    </div>
+                    <div class="row justify-content-center" id="ReverseCAGRForm">
+                        <div class="col-md vertical3">
+                            <form style="margin: 15px; font-size: 17px;">
+                                Initial Amount: <br>
+                                <input type="number" id="ia1" required
+                                    style="margin-top: 10px; margin-bottom: 10px;" /><br>
+                                <span id="initialamount1" class="form1"></span><br>
+                                CAGR (%) <br>
+                                <input type="text" id="cagr1" required
+                                    style="margin-top: 10px; margin-bottom: 10px;" /><br>
+                                <span id="cagr_1" class="form1"></span><br>
+                                Duration (yrs.):<br>
+                                <input type="number" id="dur1" required style="margin-top: 10px;" /><br>
+                                <span id="duration1" class="form1"></span><br>
+                                <button type="button" class="btn ReverseCAGRbtn" id="add1"
+                                    style="margin-top: 20px;"><b>Calculate</b></button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn ReverseCAGRbtn" onClick="clearReverseCAGR()"
+                                    id="remove1" style="margin-top: 20px;"><b>Clear</b></button><br><br>
+                            </form>
+                        </div>
+                        <div class="col-md answercagr" id="transparentcontainer1"
+                            style="background-color:rgb(249, 249, 249);margin-left: 25px;margin-bottom: 25px; border-radius: 10px;">
+                            <div class="row">
+                                <div class="col-md-4" id="ReverseCAGRText" style="margin-top: 15px; margin-left: 10px;">
+                                    <b>Final Amount:</b>
+                                </div>
+                                <div class="col-md-6 d-flex justify-content-center align-items-center"
+                                    id="ReverseCAGRanswerinLabel"
+                                    style="border-radius: 6px; height: 26px; background-color: #324ed4; color:white; margin-top: 12px;">
+                                    <b><span id="ReverseCAGRanswer"></span></b>
+                                </div>
+                            </div>
+                            <div class="" id="ReverseCAGRchart"
+                                style="margin-top: 35px;width:100%; height:100%; left:0%"></div>
+                            <div id="TransparentCAGRchart1" style="margin-top: 35px;width:100%; height:100%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body" id="SIP_Cal_Body">
+                    <div class="py-2"></div>
+                    <div class="row justify-content-center" id="SIPForm">
+                        <div class="col-md vertical1">
+                            <form style="margin:15px; font-size: 17px;">
+                                Monthly Investment:<br>
+                                <input type="number" id="mi" required
+                                    style="margin-top: 10px; margin-bottom: 10px;"><br>
+                                <span id="Monthly_Investment" class="form1"></span><br>
+                                Expected Return p.a. (%):<br>
+                                <input type="text" id="err" required style="margin-top: 10px; margin-bottom: 10px;"><br>
+                                <span id="Expected_Return_Rate" class="form1"></span><br>
+                                Time Period (Years)<br>
+                                <input type="number" id="tp" required style="margin-top: 10px;"><br>
+                                <span id="Time_Period_Years" class="form1"></span><br>
+                                <button type="button" class="btn Equitybtn" id="Calsip" onClick=""
+                                    style="margin-top: 20px;"><b>Calculate</b></button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn Equitybtn" id="Clearsip" onClick="clearSIP()"
+                                    style="margin-top: 20px;"><b>Clear</b></button><br><br>
+                            </form>
+                        </div>
+                        <div class="col-md" id="transparentcontainer2">
+                            <h1 style="font-family: 'Outfit', sans-serif; margin:25px;"><b>Result &nbsp;&nbsp;:</b>
+                            </h1>
+                            <!-- <form style="font-size: 15px; margin: 25px;"> -->
+                            <!-- <h1 style="font-family: 'Outfit', sans-serif;"><b>Result &nbsp;&nbsp;:</b></h1> -->
+                            <div class="row">
+                                <div class="col-6">
+                                    <b>Invested Amount&nbsp;:&nbsp;</b><br>
+                                </div>
+                                <div class="col-6">
+                                    <span id="Invested_Amount"></span><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <b>Estimate Returns&nbsp;:&nbsp;</b><br>
+                                </div>
+                                <div class="col-6">
+                                    <span id="Estimate_Returns"></span><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <b>Total Value&nbsp;:&nbsp;</b><br>
+                                </div>
+                                <div class="col-6">
+                                    <span id="Total_Value"></span><br>
+                                </div>
+                            </div>
+                            <div class="mx-3" id="SIPchart" style="margin-top: 20px;width:100%; height:100%; left:0%">
+                            </div>
+                            <div id="TransparentSIPchart" style="margin-top: 20px;"></div>
+                            <!-- </form> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body" id="PIVOT_Cal_Body">
+                    <div class="col">
+                        <div class="container mx-5 mt-3 pivot_body_for_laptop">
+                            <div class="row"
+                                style="color: #727272; font-weight: bolder; text-align: center; font-size: large;">
+                                <div class="col d-flex align-items-center">
+                                    <div class="row">Open Price</div>
+                                </div>
+                                <div class="col d-flex align-items-center">
+                                    <div class="row">High Price</div>
+                                </div>
+                                <div class="col d-flex align-items-center">
+                                    <div class="row">Low Price</div>
+                                </div>
+                                <div class="col d-flex align-items-center">
+                                    <div class="row">Close Price</div>
+                                </div>
+                                <div class="col d-flex align-items-center">
+                                    <div class="row"></div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container mx-5 mb-3 pivot_body_for_laptop">
+                            <div class="row"
+                                style="color: #727272; font-weight: bolder; text-align: center; font-size: large;">
+                                <div class="col d-flex align-items-center">
+                                    <div class="row">
+                                        <input type="number" id="open_price" required>
+                                    </div>
+                                </div>
+                                <div class="col d-flex align-items-center">
+                                    <div class="row">
+                                        <input type="number" id="high_price" required>
+                                    </div>
+                                </div>
+                                <div class="col d-flex align-items-center">
+                                    <div class="row">
+                                        <input type="number" id="low_price" required>
+                                    </div>
+                                </div>
+                                <div class="col d-flex align-items-center">
+                                    <div class="row">
+                                        <input type="number" id="close_price" required>
+                                    </div>
+                                </div>
+                                <div class="col d-flex align-items-center" id="cal_pivot">
+                                    <div class="row py-2 px-3"
+                                        style="border-radius:20px;background-color: #324ed4;color:white; cursor:pointer;"
+                                        onclick="calpivot()">
+                                        Calculate</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="container pivot_body_for_mobile"
+                            style="color: #727272; font-weight: bolder; text-align: center; font-size: large;">
+                            <div class="row py-2">
+                                <div class="col">Open Price:</div>
+                                <div class="col"><input type="number" id="open_price_1" required></div>
+                            </div>
+                            <div class="row py-2">
+                                <div class="col">High Price:</div>
+                                <div class="col"><input type="number" id="high_price_1" required></div>
+                            </div>
+                            <div class="row py-2">
+                                <div class="col">Low Price:</div>
+                                <div class="col"><input type="number" id="low_price_1" required></div>
+                            </div>
+                            <div class="row py-2">
+                                <div class="col">Close Price:</div>
+                                <div class="col"><input type="number" id="close_price_1" required></div>
+                            </div>
+                            <div class="row mx-5 px-2 d-flex justify-content-center" onclick="calpivot_for_mobile()">
+                                <div class="col mx-5 my-3 py-2 px-2"
+                                    style="border-radius:20px;background-color: #324ed4;color:white; cursor:pointer; width: fit-content;">
+                                    Calculate
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row Cal_Body" id="PIVOT_Cal_Body_1" style="overflow:auto;border-top-width: 12px">
+                    <table class="text-center" id="PIVOT_Cal_Table">
+                        <thead id="PIVOT_Cal_Table_Head">
+                            <tr style="background-color:#324ed4;color:white;font-weight: bolder;">
+                                <th id="first_col">
+                                    <div class="col" id="levels"></div>
+                                    <div class="col" style="font-weight: bolder;font-size:12px;">LEVELS</div>
+                                </th>
+                                <th>FLOOR</th>
+                                <th>WOODIE</th>
+                                <th>CAMARILLA</th>
+                                <th>DEMARK</th>
+                                <th>FIBONACCI</th>
+                            </tr>
+                        </thead>
+                        <tbody style="font-weight:700; font-size: 1rem;" id="PIVOT_Cal_Table_Body">
+                            <tr>
+                                <td class="px-3" style="color:#727272">R4</td>
+                                <td><span id="floor_r4"></span></td>
+                                <td><span id="woodie_r4"></span></td>
+                                <td><span id="camarilla_r4"></span></td>
+                                <td><span id="demark_r4"></span></td>
+                                <td><span id="fibonacci_r4"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="px-3" style="color:#727272">R3</td>
+                                <td><span id="floor_r3"></span></td>
+                                <td><span id="woodie_r3"></span></td>
+                                <td><span id="camarilla_r3"></span></td>
+                                <td><span id="demark_r3"></span></td>
+                                <td><span id="fibonacci_r3"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="px-3" style="color:#727272">R2</td>
+                                <td><span id="floor_r2"></span></td>
+                                <td><span id="woodie_r2"></span></td>
+                                <td><span id="camarilla_r2"></span></td>
+                                <td><span id="demark_r2"></span></td>
+                                <td><span id="fibonacci_r2"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="px-3" style="color:#727272">R1</td>
+                                <td><span id="floor_r1"></span></td>
+                                <td><span id="woodie_r1"></span></td>
+                                <td><span id="camarilla_r1"></span></td>
+                                <td><span id="demark_r1"></span></td>
+                                <td><span id="fibonacci_r1"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="px-3 PP_Before">PP</td>
+                                <td><span id="floor_pp"></span></td>
+                                <td><span id="woodie_pp"></span></td>
+                                <td><span id="camarilla_pp"></span></td>
+                                <td><span id="demark_pp"></span></td>
+                                <td><span id="fibonacci_pp"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="px-3" style="color:#324ed4">S1</td>
+                                <td><span id="floor_s1"></span></td>
+                                <td><span id="woodie_s1"></span></td>
+                                <td><span id="camarilla_s1"></span></td>
+                                <td><span id="demark_s1"></span></td>
+                                <td><span id="fibonacci_s1"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="px-3" style="color:#324ed4">S2</td>
+                                <td><span id="floor_s2"></span></td>
+                                <td><span id="woodie_s2"></span></td>
+                                <td><span id="camarilla_s2"></span></td>
+                                <td><span id="demark_s2"></span></td>
+                                <td><span id="fibonacci_s2"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="px-3" style="color:#324ed4">S3</td>
+                                <td><span id="floor_s3"></span></td>
+                                <td><span id="woodie_s3"></span></td>
+                                <td><span id="camarilla_s3"></span></td>
+                                <td><span id="demark_s3"></span></td>
+                                <td><span id="fibonacci_s3"></span></td>
+                            </tr>
+                            <tr>
+                                <td class="px-3" style="color:#324ed4">S4</td>
+                                <td><span id="floor_s4"></span></td>
+                                <td><span id="woodie_s4"></span></td>
+                                <td><span id="camarilla_s4"></span></td>
+                                <td><span id="demark_s4"></span></td>
+                                <td><span id="fibonacci_s4"></span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="row boxshadow Cal_Body" id="EMI_Cal_Body">
+                    <div class="py-2"></div>
+                    <div class="row justify-content-center" id="EMIForm">
+                        <div class="col-md vertical1">
+                            <form style="margin:15px; font-size: 17px;">
+                                Loan Amount<br>
+                                <input type="number" id="Loan_Amount" required
+                                    style="margin-top: 10px; margin-bottom: 10px;"><br>
+                                <span id="la" class="form1"></span><br>
+                                Rate of Interest (p.a)<br>
+                                <input type="text" id="Rate_of_Interest" required
+                                    style="margin-top: 10px; margin-bottom: 10px;"><br>
+                                <span id="roi" class="form1"></span><br>
+                                Loan Tenure (In Years)<br>
+                                <input type="number" id="Loan_Tenure" required style="margin-top: 10px;"><br>
+                                <span id="lt" class="form1"></span><br>
+                                <button type="button" class="btn Equitybtn" id="Calemi" onClick=""
+                                    style="margin-top: 20px;"><b>Calculate</b></button>
+                                &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                                <button type="button" class="btn Equitybtn" id="Clearemi" onClick="clearEMI()"
+                                    style="margin-top: 20px;"><b>Clear</b></button><br><br>
+                            </form>
+                        </div>
+                        <div class="col-md" id="transparentcontainer3">
+                            <h1 style="font-family: 'Outfit', sans-serif;"><b>Result &nbsp;&nbsp;:</b>
+                            </h1>
+                            <!-- <form style=" font-size: 15px; margin: 25px;"> -->
+                            <!-- <h1 style="font-family: 'Outfit', sans-serif;"><b>Result &nbsp;&nbsp;:</b></h1> -->
+                            <div class="row">
+                                <div class="col-6">
+                                    <b>Monthly EMI&nbsp;:&nbsp;</b><br>
+                                </div>
+                                <div class="col-6">
+                                    <span id="Monthly_EMI"></span><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <b>Principal Amount&nbsp;:&nbsp;</b><br>
+                                </div>
+                                <div class="col-6">
+                                    <span id="Principal_Amount"></span><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <b>Total Interest&nbsp;:&nbsp;</b><br>
+                                </div>
+                                <div class="col-6">
+                                    <span id="Total_Interest"></span><br>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="col-6">
+                                    <b>Total Amount&nbsp;:&nbsp;</b><br>
+                                </div>
+                                <div class="col-6">
+                                    <span id="Total_Amount"></span><br>
+                                </div>
+                            </div>
+                            <div class="mx-3" id="EMIchart" style="margin-top: 20px;width:100%; height:100%; left: 0%">
+                            </div>
+                            <div id="TransparentEMIchart" style="margin-top: 20px;"></div>
+                            <!-- </form> -->
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body RiskCalculatorDiscription">
+                    <div class="col">
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                What is Risk calculator?
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                One of the most important tools in a trader's bag is risk management. Proper
+                                position
+                                sizing is key to managing risk and to avoid blowing out your account on a single
+                                trade.
+                                If your position size is too limited or too wide, you may end up taking a lot of
+                                risks
+                                or end up taking not enough for you to profit from a trade.<br>
+                                Knowing your risk position is critical to establishing a winning strategy. Our
+                                calculator helps you make trading decisions based on intellect and not emotion.
+                                That's
+                                how you trade like a pro.<br>
+                                With a few simple inputs, our calculator will help you find the approximate units to
+                                buy
+                                or sell to control your maximum risk per position.
+                            </div>
+                        </div>
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Important terms to understand
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                <u>Account capital :</u> Pretty straightforward, traders just need to input their
+                                account
+                                capital.<br><br>
+                                <u>Risk per trade (%) :</u> This is a crucial field. Here you have to put the risk
+                                you
+                                are
+                                wiling to take on that trade in terms of % of your account capital.<br>
+                                All Pro traders take risk in a range of 1-5% per trade.<br><br>
+                                <u>Stoploss in rupee :</u> Here, traders should input the maximum number of points
+                                they
+                                are
+                                willing to risk, or lose, in a trade, to protect the account capital in case the
+                                market
+                                goes against their position.<br>
+                                For eg: You bought in BankNifty CE at 250 Rs and as per your analysis you should
+                                exit
+                                that trade if price goes below 200 Rs. So here you are stoploss is (250 - 200) = Rs.
+                                50<br><br>
+                                <u>Lot size :</u> If you are trading in F&O enter the lot size of instrument you are
+                                taking trade in.<br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body RiskCalculatorDiscription">
+                    <div class="col">
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col">How to use this Calculator?
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                <b>For Equity:</b><br>
+                                Let's say you have purchased Reliance at 2500.<br>
+                                Your <u>Account Capital is 1,00,000</u><br>
+                                You are willing to take <u>Risk per trade is 2%</u><br>
+                                You are planning to exit Reliance if it goes down below 2430, so <u>stoploss in
+                                    rupees
+                                    is 70</u><br><br>
+                                <u>Total quantity</u> you can enter with =<br>
+                                Account capital × Risk per trade (%) / 100 / Stoploss in rupees<br>
+                                = (1,00,000) × (2) / 100 / 70<br>
+                                = 28.57 ≈ 28<br><br>
+                                Now <u>amount at risk</u><br>
+                                = Total quantity × stoploss<br>
+                                = 28 × 70<br>
+                                = 1960<br><br>
+                                <b>For F&O:</b><br>
+                                Let's say you have a capital of 1,00,000<br>
+                                <u>Account Capital</u> = 1,00,000<br><br>
+                                Now you are willing to take 2% risk per trade. That is the maximum you are willing
+                                to
+                                lose if trade goes wrong is 2% of account capital<br>
+                                = 2% of 1,00,000<br>
+                                = 2000<br>
+                                So, <u>Risk Per Trade (%):</u> 2%<br><br>
+                                You are trading in BankNifty CE<br>
+                                Lot size of BankNIfty is 25<br>
+                                <u>Lot size</u> = 25<br><br>
+                                Now you have bought the BankNIfty CE at 250 rupees and as per your analysis if
+                                BankNifty
+                                CE goes below 215 level, you should exit the trade. So here your risk is (250-215) =
+                                Rs.
+                                35<br>
+                                So, <u>Stoploss in rupee</u> = 35<br><br>
+                                Here as you are trading in Derivative, you have to buy/sell minimum 1 lot.<br>
+                                So. first we will find risk per lot<br>
+                                Risk per Lot = Lot Size × Stoploss in Rupee<br>
+                                = 25 × 35<br>
+                                = 875<br><br>
+                                Now,
+                                <u>No of lots</u> you can trade = Risk per trade in rupee / Risk per Lot<br>
+                                = 2% of capital / (25 × 35)<br>
+                                = 2000 / 875<br>
+                                = 2.28 ≈ 2 lots<br><br>
+                                <u>Total Quantity</u> = No. of lots × Lot Size<br>
+                                = 2 × 25<br>
+                                = 50<br><br>
+                                <u>Amount at risk</u> = No. of Lots × Risk per Lot<br>
+                                = 2 × 875<br>
+                                = 1750<br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body CAGRCalculatorDiscription">
+                    <div class="col">
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col">What is Compound Annual Growth Rate (CAGR)?
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Compound Annual Growth Rate (CAGR) is the annual growth of your investments over a
+                                specific period of time. In other words, it is a measure of how much you have earned
+                                on
+                                your investments every year during a given interval. This is one of the most
+                                accurate
+                                methods of calculating the rise or fall of your investment returns over time.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body CAGRCalculatorDiscription">
+                    <div class="col">
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col">How to calculate CAGR?
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                1st Divide the investment value at the end of the period by the initial value.<br>
+                                Then increase the result to the power of one divided by the time period of the
+                                investment in years.<br>
+                                Subtract one from the total.<br>
+                                Mathematically, CAGR formula is given by the following equation-<br><br>
+                                CAGR = (IA / FA) <sup>1 / n</sup> - 1<br><br>
+                                In the above formula, FA stands for the final amount of the investment, IA stands
+                                for
+                                the present value of the investment, and n stands for the number of years of
+                                investment.<br><br>
+                                Let's take an example: <br>
+                                Imagine you invested Rs.20000 in a mutual fund in 2015. The investment will be worth
+                                Rs.35000 in 2020. Using the formula, the CAGR of this mutual fund investment will
+                                be-<br><br>
+                                CAGR= (35000/ 20000)<sup>(1/5)</sup> - 1 = 11.84%<br><br>
+                                Here, that means the mutual fund investment gave you an average return of 11.84% per
+                                annum. You can also calculate the absolute returns on investment using the CAGR
+                                calculator. The calculation will be-<br><br>
+                                Absolute returns= (IA / FA) / PV * 100 = (35000-20000)/ 20000 * 100 = 75%<br><br>
+                                This means your mutual fund investment gave you an absolute return of 75% over its
+                                tenure.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body CAGRCalculatorDiscription">
+                    <div class="col">
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col">Advantages of using CAGR
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                <ul>
+                                    <li>
+                                        It will enable you to evaluate your investment options. For example, if
+                                        stock A
+                                        is not
+                                        working as well as Stock B based on their respective CAGR indices, you can
+                                        invest in
+                                        Stock B instead.</li>
+                                    <li>
+                                        The relative growth of your organization with respect to the market leaders
+                                        in
+                                        your
+                                        business segment.</li>
+                                    <li>
+                                        CAGR is a more accurate way of calculating and determining returns of an
+                                        investment
+                                        the value of which changes over time. Investors can compare the 2 investment
+                                        options of
+                                        the same category or a market index using CAGR. How is one investment
+                                        performing
+                                        compared to the other of the same category and same time period?</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body ReverseCAGRCalculatorDiscription">
+                    <div class="col">
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                1st
+                                what is Compound Annual Growth Rate (CAGR)?
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Compound Annual Growth Rate (CAGR) is the annual growth of your investments over a
+                                specific period of time. In other words, it is a measure of how much you have earned
+                                on
+                                your investments every year during a given interval.
+                            </div>
+                        </div>
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Now what is Reverse CAGR ?
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Reverse CAGR Calculator is an online tool to calculate the future value (Final
+                                Amount or
+                                Maturity Value)of an investment when the CAGR (Compound annual growth rate) is
+                                already
+                                known. To calculate the final value or maturity value of an investment, just fill in
+                                the
+                                starting investment amount, CAGR and the time period. Next, click on calculate.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body ReverseCAGRCalculatorDiscription">
+                    <div class="col">
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                How to calculate Reverse CAGR?
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Here is the formula to calculate Reverse CAGR(compound annual growth rate)<br><br>
+                                FA = IA * (CAGR / 100 + 1)<sup>n</sup><br>
+                                FA = Final Amount/Future Amount<br>
+                                IA = Initial Amount<br>
+                                n = number of years the money is invested for<br><br>
+                                Let's take an example:<br>
+                                Rahul has invested 1,00,000 in mutual funds for 5 Years and where annual growth rate
+                                is
+                                14.87 %.<br><br>
+                                FA = IA * (CAGR / 100 + 1) <sup> n</sup><br>
+                                CAGR = 14.87<br>
+                                IA (Initial Amount) = 1,00,000<br>
+                                n (Period) = 5 Year<br><br>
+                                Reverse CAGR Calculation Steps<br>
+                                FA = IA * (CAGR / 100 + 1) <sup> n</sup><br>
+                                FA = 1,00,000 * (14.87 / 100 + 1) <sup> 5</sup><br>
+                                FA = 1,00,000 * (0.1487 + 1) <sup> 5</sup><br>
+                                FA = 1,00,000 * (1.1487) <sup> 5</sup><br>
+                                FA = 1,00,000 * 2.00 <br>
+                                FA = 2,00,000<br><br>
+                                So, after 5 years, the invested value will become 2,00,000<br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body SIPCalculatorDiscription">
+                    <div class="col">
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                What is SIP calculator?
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                A Systematic Investment Plan (SIP) calculator is an online financial tool that can help
+                                to calculate the returns you would earn on your SIP investments. The calculator also
+                                tells you how much you would need to invest every month to earn a target corpus. Simply
+                                put, it provides a roadmap to achieve your various financial goals.<br><br>
+                                Formula to Calculate your SIP:-<br>
+                                Our SIP Calculator uses the following formula –<br>
+                                M = P × ({[1 + i]^n – 1} / i) × (1 + i).<br><br>
+                                In this formula –<br>
+                                M is the amount you receive on maturity<br>
+                                P is the amount you invest at regular intervals<br>
+                                n is the number of payments you have made so far<br>
+                                i is the periodic rate of interest<br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body SIPCalculatorDiscription">
+                    <div class="col">
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                How to calculate SIP investments?
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Here, as you can see the SIP calculator has three input boxes.<br>
+                                -Monthly investment amount<br>
+                                -Expected returns(p.a)<br>
+                                -Investment period(in years)<br>
+                                <br>
+                                Suppose you wish to invest Rs. 4,000 per month for 10 years. The expected rate of return
+                                is 10%. You need to input these values in the specified boxes, and the calculator gives
+                                you the corpus you would earn.<br>
+                                <br>
+                                So here,<br>
+                                <br>
+                                Monthly investment amount = 4,000<br>
+                                Expected returns(p.a) = 10%<br>
+                                Investment period(in years) = 10 years<br>
+                                <br>
+                                If you fill the above parameters you will get the result as,<br>
+                                <br>
+                                Invested Amount : ₹4,80,000.00<br>
+                                Estimate Returns : ₹3,46,208.08<br>
+                                Total Value : ₹8,26,208.08<br>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body PivotPointCalculatorDiscription">
+                    <div class="col">
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                What is Pivot points
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Traders use pivot points to find intraday support/resistance levels. Pivot points are
+                                found by a simple calculation which involves the open,high,low and close for the
+                                previous day of any particular stock or index. It is said that when a price hovers below
+                                a pivot or pivot support/resistance and breaks up through it then its a buy signal (or
+                                vice versa for a sell signal). Or if the prices are above the pivot it is considered
+                                bullish and if they are below then bearish.
+                            </div>
+                        </div>
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                <br>
+                                5 Different Kinds of Pivot Points:-
+                                <br><br>
+                                Floor pivot points:-
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                <table class="pivot_point_description_table">
+                                    <tr>
+                                        <td>Pivot Point</td>
+                                        <td>(P)</td>
+                                        <td>=</td>
+                                        <td>(High + Low + Close)/3</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>S1</td>
+                                        <td>=</td>
+                                        <td>P * 2 - High</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>S2</td>
+                                        <td>=</td>
+                                        <td>P - (High - Low)</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>S3</td>
+                                        <td>=</td>
+                                        <td>Low - 2(High - P)</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>R1</td>
+                                        <td>=</td>
+                                        <td>P * 2 - Low</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>R2</td>
+                                        <td>=</td>
+                                        <td>P + (High - Low)</td>
+                                    </tr>
+                                    <tr>
+                                        <td></td>
+                                        <td>R3</td>
+                                        <td>=</td>
+                                        <td>High + 2(P - Low)</td>
+                                    </tr>
+                                </table>
+                                <div class="pivot_point_table" style="display: none;">
+                                    Pivot Point (P) = (High + Low + Close)/3 <br>
+                                    S1 = P * 2 - High <br>
+                                    S2 = P - (High - Low) <br>
+                                    S3 = Low - 2(High - P) <br>
+                                    R1 = P * 2 - Low <br>
+                                    R2 = P + (High - Low) <br>
+                                    R3 = High + 2(P - Low) <br>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Woodie pivot points:-
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Woodie’s pivot points place more weight on the closing price. However, the calculation
+                                is similar to the standard pivots formula.
+                                <br><br>
+                                The calculation is as follows:
+                                <br><br>
+                                R2 = P + (H - L)<br>
+                                R1 = (2 * P) - LOW<br>
+                                P = (HIGH + LOW + (CLOSE * 2)) / 4<br>
+                                S1 = (2 * P) - HIGH<br>
+                                S2 = P - (H - L)<br>
+                            </div>
+                        </div>
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                CAMARILLA pivot points:-
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Another pivot point that traders use are Camarilla pivot points. Nick Scott invented the
+                                Camarilla pivot point in the 1980s.
+                                <br><br>
+                                It’s similar to the Woodie’s pivot point. However, there are four resistance levels and
+                                four support levels. In contrast, the Woodie pivot point has two Resistance levels and
+                                two Support levels.
+                                <br><br>
+                                This is the calculation for the Camarilla pivot point:
+                                <br><br>
+                                R4 = Closing + ((High -Low) x 1.5000)<br>
+                                R3 = Closing + ((High -Low) x 1.2500)<br>
+                                R2 = Closing + ((High -Low) x 1.1666)<br>
+                                R1 = Closing + ((High -Low x 1.0833)
+                                <br><br>
+                                PP = (High + Low + Closing) / 3
+                                <br><br>
+                                S1 = Closing – ((High -Low) x 1.0833)<br>
+                                S2 = Closing – ((High -Low) x 1.1666)<br>
+                                S3 = Closing – ((High -Low) x 1.2500)<br>
+                                S4 = Closing – ((High-Low) x 1.5000)<br>
+                            </div>
+                        </div>
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                DEMARK pivot points:-
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Demark pivot points have a different relationship between the opening and closing
+                                prices. Noted trader Tom Demark introduced this version.
+                                <br><br>
+                                The Demark pivot point uses the number X to calculate the lower level line and the upper
+                                resistance level. It also emphasizes recent price action. The calculation is as follows:
+                                <br><br>
+                                If Close < Open, then X=High + (2 * Low) + Close<br>
+                                    If Close > Open, then X = (2 * High) + Low + Close<br>
+                                    If Close = Open, then X = High + Low + (2 * Close)<br>
+                                    Support 1 (S1) = X/2 - High<br>
+                                    Resistance 1 (R1) = X/2 - Low<br>
+
+                            </div>
+                        </div>
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Fibonacci Pivot Points:-
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                The Fibonacci pivot point is perhaps the most popular among traders.
+                                <br><br>
+                                <table class="pivot_point_description_table">
+                                    <tr>
+                                        <td>Pivot Point</td>
+                                        <td>(P)</td>
+                                        <td> = </td>
+                                        <td>(High + Low + Close)/3</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Support 1</td>
+                                        <td>(S1)</td>
+                                        <td> = </td>
+                                        <td>P - (0.382 * (High - Low))</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Support 2</td>
+                                        <td>(S2)</td>
+                                        <td> = </td>
+                                        <td>P - (0.6182 * (High - Low))</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Support 3</td>
+                                        <td>(S3)</td>
+                                        <td> = </td>
+                                        <td>P - (1 * (High - Low))</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Resistance 1</td>
+                                        <td>(R1)</td>
+                                        <td> = </td>
+                                        <td>P + (0.382 * (High - Low))</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Resistance 2</td>
+                                        <td>(R2)</td>
+                                        <td> = </td>
+                                        <td>P + (0.6182 * (High - Low))</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Resistance 3</td>
+                                        <td>(R3)</td>
+                                        <td> = </td>
+                                        <td>P + (1 * (High - Low))</td>
+                                    </tr>
+                                </table>
+                                <div class="pivot_point_table" style="display: none;">
+                                    Pivot Point (P) = (High + Low + Close)/3<br>
+                                    Support 1 (S1) = P - (0.382 * (High - Low))<br>
+                                    Support 2 (S2) = P - (0.6182 * (High - Low))<br>
+                                    Support 3 (S3) = P - (1 * (High - Low))<br>
+                                    Resistance 1 (R1) = P + (0.382 * (High - Low))<br>
+                                    Resistance 2 (R2) = P + (0.6182 * (High - Low))<br>
+                                    Resistance 3 (R3) = P + (1 * (High - Low))<br>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body PivotPointCalculatorDiscription">
+                    <div class="col">
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                How to calculate Pivot Points:-
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                suppose, we want to calculate Floor pivots of Reliance,<br>
+                                So we have to fill the previous day’s OPEN, HIGH, LOW AND CLOSE price of
+                                Reliance<br><br>
+                                Open = 2608.90<br>
+                                High = 2721.05<br>
+                                Low = 2502.00<br>
+                                Close = 2707.55<br><br>
+                                Then we apply the three values in the formulas above, and we get the following
+                                results:<br><br>
+                                (PP) = (High + Low + Close)/3 = (2721.05+2502+2707.55)/3 = 2643.53<br>
+                                S1 = P * 2 - High = ((2643.53*2) - 2721.05) = 2566.02<br>
+                                S2 = P - (High - Low) = (2643.53 - (2721.05- 2502.00)) = 2424.48<br>
+                                S3 = Low - 2(High - P) = (2502.00 - 2(2721.05 - 2643.53)) = 2346.97<br>
+                                R1 = P * 2 - Low = (2643.53*(2 - 2502.00)) = 2785.07<br>
+                                R2 = P + (High - Low) = (2643.53 + (2721.05 - 2502.00 )) = 2862.58<br>
+                                R3 = High + 2(P - Low) = (2721.05 + 2(2643.53 - 2502.00)) = 3004.12<br><br>
+                                Similary, you can calculate Other 4 pivot points using their formulas.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body EMICalculatorDiscription">
+                    <div class="col">
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                What is EMI calculator
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Equated Monthly Installment - EMI for short - is the amount payable every month to the
+                                bank or any other financial institution until the loan amount is fully paid off. It
+                                consists of the interest on loan as well as part of the principal amount to be repaid.
+                                The sum of principal amount and interest is divided by the tenure, i.e., number of
+                                months, in which the loan has to be repaid. This amount has to be paid monthly. The
+                                interest component of the EMI would be larger during the initial months and gradually
+                                reduce with each payment.
+                                <br><br>
+                                The Loan EMI Calculator requires you to fill in only three essential fields to determine
+                                your monthly installments<br>
+                                - Loan Amount<br>
+                                - Rate of Interest<br>
+                                - Term of the Loan
+                            </div>
+                        </div>
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Loan Amount:-
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Choosing the loan amount is another significant factor for determining your EMI. Based
+                                on the loan amount you choose, your equated monthly installment will be calculated
+                                accordingly.
+                            </div>
+                        </div>
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Rate of Interest:-
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                The rate of interest is a vital factor that will help to assess the installment amount
+                                owed. You can compare the product and opt for one which has a lower rate of interest so
+                                that your overall repayment stays low.
+                            </div>
+                        </div>
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Term of the Loan:-
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                A loan’s tenure may get reduced or extended. Subsequently, there will be an increase or
+                                a decrease in the EMI amount as well. Thus, considering the term of a loan is also an
+                                important factor that may affect your due amount.<br><br>
+                                You can alter the EMI to meet your repayment capacity as well. Increasing the tenor will
+                                lower your EMIs and vice versa. You can do this by making changes in the respective
+                                fields of the EMI Calculator.<br><br>
+                                This Loan EMI Calculator also shows the break-up of the principle and the interest
+                                amounts while calculating the EMI.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body EMICalculatorDiscription">
+                    <div class="col">
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Formula:-
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                There is a specific formula that we uses to compute the EMI amount for a loan.
+                                <br><br>
+                                EMI = [P x R x (1+R) ^N]/ [(1+R) ^ (N-1)], where –
+                                <br><br>
+                                P is the principal amount<br>
+                                R is the rate of interest<br>
+                                N is the loan tenure<br>
+                                This is the standardized formula used by any online loan calculator. Some variables may
+                                be added based on the type of loan.
+                                <br><br>
+                                <b style="font-size:x-large;">How to calculate EMI:-</b><br>
+                                For example, if you take a loan of ₹10,00,000 from the bank at 10.5% annual interest for
+                                a period of 10 years (i.e., 120 months),
+                                <br><br>
+                                Then,<br>
+                                -Loan Amount = ₹10,00,000<br>
+                                -Rate of Interest(p.a) = 10.5%<br>
+                                -Loan Tenure (In Years) = 10 years<br>
+                                <br>
+                                Therefore, EMI = ₹10,00,000 * 0.00875 * (1 + 0.00875)120 / ((1 + 0.00875)120 - 1) =
+                                ₹13,493.
+                                <br><br>
+                                i.e., you will have to pay ₹13,493 for 120 months to repay the entire loan amount.
+                                <br><br>
+                                The total amount payable will be ₹13,493 * 120 = ₹16,19,220 that includes ₹6,19,220 as
+                                interest toward the loan.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body" id="DeliveryScannerDiscription">
+                    <div class="col">
+                        <div class="row mt-3" style="font-weight: bolder;font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Highest Delivery & Delivery Spike scanner
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Most analysts give importance to volume or traded quantity. However, not all traders
+                                or
+                                investors participated on that day took shares in their demat account. As a trader I
+                                give more importance to Deliverable Quantity/Delivery Percentage.<br>
+                                For example, the total traded quantity of a Stock A is 1000. Assuming out of 1000,
+                                deliverable quantity is 600. It means balance 400 shares were traded intraday and
+                                only
+                                600 shares are marked for delivery. The delivery percentage of 60% is vital in this
+                                example.<br><br>
+                                <b>"Highest Delivery"</b> scanners shows stocks which have seen the highest delivery in
+                                their
+                                share compared to last 20 days, This shows big players are not only trading but
+                                taking
+                                these shares home.<br><br>
+                                <b>"Delivery Spike"</b> scanners shows stocks which have seen a sudden increase in their
+                                delivery percentage compared to yesterday. This usually happens when there is some
+                                news
+                                related to that stock.<br>
+                            </div>
+                        </div>
+                        <div class="row mt-3" style="font-weight: bolder;font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                How to use this scanner for short term trading ?
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                There is a strong co-relation between Delivery Percentage and the Stock Price. Let's
+                                see
+                                all possible scenarios:<br><br>
+                                <b>(1) Increase in Delivery Percentage and stock price goes up:</b><br><br>
+                                It shows BULLISH Trend in the stock. As I mentioned, it means Traders/Investors are
+                                accepting delivery of stock i.e. buying for a long term. In this scenario, there is
+                                a
+                                possibility of further increase in stock price.<br><br>
+                                <b>(2) Increase in Delivery Percentage and stock price goes down:</b><br><br>
+                                The increase in Delivery Percentage with a fall in Stock Price means investors are
+                                offloading or exiting their long positions. It is not a good sign for the stock and
+                                the
+                                stock price may go down further. It's a sign of Bearish Trend and Traders/Investors
+                                should exit the stock.<br><br>
+                                <b>(3) Decrease in Delivery Percentage and stock price goes up:</b><br><br>
+                                Here decrease in delivery percentage implies very high intraday activity. Though the
+                                price is going up, traders are not confident to hold it for short term. Such a trend
+                                is
+                                normally short-lived.<br><br>
+                                <b>(4) Decrease in Delivery Percentage and stock price goes down:</b><br><br>
+                                A decrease in Delivery % and fall in Stock price means there is a possibility of
+                                trend
+                                reversal very shortly. We can assume traders are offloading their positions. They
+                                are
+                                anticipating the reversal in stock price trend.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="row boxshadow Cal_Body" id="FII_DII_Discription">
+                    <div class="col">
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                What
+                                is FII/ DII ?
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Any market participant's buy or sell decision results in an impact on the price of
+                                any
+                                stock. People like you and me, who individually invest in the stock market, all come
+                                under the retail category. The investment institutions like mutual funds, pension
+                                funds
+                                fall under the foreign institutional investors (FII) or domestic institutional
+                                investors
+                                (DII) category.
+                            </div>
+                        </div>
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                FII
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                FII full form is Foreign Institutional Investor. FIIs are an institution or fund
+                                house
+                                incorporated outside India. They are also registered with SEBI and make an
+                                investment in
+                                the Indian security market. FIIs are also known as FPIs (Foreign Portfolio
+                                Investor).
+                                Example: EURO PACIFIC GROWTH FUND.
+                            </div>
+                        </div>
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                DII
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                DIIs are an investor or fund houses based in the same country where they are
+                                investing
+                                their money. Example: Mutual Fund Houses.
+                            </div>
+                        </div>
+                        <div class="row mt-3" style="font-weight: bolder; font-size: x-large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                How to use FII / DII data ?
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                Compare to DIIs investment, we focus more on FII investment and activities because
+                                of
+                                their research quality. It is no need to mention that purchasing power of FIIs is
+                                much
+                                bigger than DIIs. That is why FIIs are named as market movers because their buying
+                                and
+                                selling quantity moves the market direction.
+                            </div>
+                        </div>
+                        <div class="row mt-2" style="font-size: large;">
+                            <div class="col" style="text-align: justify; padding-left: 15px;padding-right: 15px;">
+                                If FII are buying , usually markets remains bullish and it goes up and similarly if
+                                FII
+                                are selling that means that market will fall or it is going to give a down move in
+                                comes
+                                days.
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid justify-content-center"
+        style="margin-top:150px; background-color: #081452; color:white">
+        <div class="container-fluid text-light footer wow fadeIn" data-wow-delay="0.1s">
+            <div class="container">
+                <div class="row g-5">
+                    <div class="col-lg-4 col-md-6">
+                        <div id="footer-sidebar1">
+                            <div class="row d-flex align-items-center">
+                                <div class="col-5">
+                                    <aside id="block-12" class="widget widget_block widget_media_image">
+                                        <figure class="wp-block-image size-full"><img loading="lazy" width="73"
+                                                height="78" src="img/tci_logo_white.png" alt="" class="wp-image-988" />
+                                        </figure>
+                                    </aside>
+                                </div>
+                                <div class="col-2">
+                                    <aside id="block-11" class="widget widget_block">
+                                        <p><a href="https://www.tradingcafeindia.in/pay" class="pay-now"
+                                                target="_blank">Pay
+                                                Now</a>
+                                        </p>
+                                    </aside>
+                                </div>
+                            </div>
+                            <aside id="block-8" class="widget widget_block widget_text">
+                                <p>By connecting students all over the world to the best instructors, we helping
+                                    individuals
+                                    reach their goals and pursue their dreams. </p>
+                            </aside>
+                        </div>
+                        <div class="d-flex">
+                            <div id="footer-sidebar2">
+                                <aside id="block-9" class="widget widget_block">
+                                    <p>
+                                        <a href="https://www.facebook.com/TradingCafeIndia/"
+                                            class=" btn btn-outline-light btn-social fab fa-facebook-f"></a>
+                                        <a href="https://www.instagram.com/tradingcafeindia/?hl=en"
+                                            class=" btn btn-outline-light btn-social fab fa-instagram"></a>
+                                        <a href="https://t.me/tradingcafeindia"
+                                            class=" btn btn-outline-light btn-social fab fa-telegram"></a>
+                                    </p>
+                                </aside>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-8 col-md-6">
+                        <div class="row">
+                            <div class="col-lg-4 col-md-6">
+                                <div id="footer-sidebar3">
+                                    <aside id="nav_menu-2" class="widget widget_nav_menu">
+                                        <h4 class="widget-title">Quick Links</h4>
+                                        <nav class="menu-quick-links-container" aria-label="Quick Links">
+                                            <ul id="menu-quick-links" class="menu">
+                                                <li id="menu-item-291"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-291">
+                                                    <a href="https://tradingcafeindia.com/about-us/">About
+                                                        Us</a>
+                                                </li>
+                                                <li id="menu-item-292"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-292">
+                                                    <a href="https://tradingcafeindia.com/success-stories/">Success
+                                                        Stories</a>
+                                                </li>
+                                                <li id="menu-item-290"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-290">
+                                                    <a href="https://tradingcafeindia.com/career/">Career</a>
+                                                </li>
+                                                <li id="menu-item-993"
+                                                    class="menu-item menu-item-type-custom menu-item-object-custom menu-item-993">
+                                                    <a href="https://tcistudents.com/">Students Portal</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </aside>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <div id="footer-sidebar4">
+                                    <aside id="nav_menu-3" class="widget widget_nav_menu">
+                                        <h4 class="widget-title">More</h4>
+                                        <nav class="menu-more-container" aria-label="More">
+                                            <ul id="menu-more" class="menu">
+                                                <li id="menu-item-516"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-516">
+                                                    <a
+                                                        href="https://tradingcafeindia.com/terms-of-use-trading-cafe-india-tci/">Terms
+                                                        Of Use</a>
+                                                </li>
+                                                <li id="menu-item-517"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-privacy-policy menu-item-517">
+                                                    <a
+                                                        href="https://tradingcafeindia.com/privacy-policy-trading-cafe-i/">Privacy
+                                                        Policy</a>
+                                                </li>
+                                                <li id="menu-item-522"
+                                                    class="menu-item menu-item-type-post_type menu-item-object-page menu-item-522">
+                                                    <a
+                                                        href="https://tradingcafeindia.com/fulfilment-policy-tci-tradiing-cafe-india-share-market-clas/">Fulfilment
+                                                        Policy</a>
+                                                </li>
+                                            </ul>
+                                        </nav>
+                                    </aside>
+                                </div>
+                            </div>
+                            <div class="col-lg-4 col-md-6">
+                                <h4 class="widget-title">Contact</h4>
+                                <div id="footer-sidebar5">
+                                    <aside id="block-10" class="widget widget_block">
+                                        <p class="mb-2">A-35, udhognagar, Jamnagar<br> 361006 - Gujarat</p>
+                                        <p class="mb-2"><a
+                                                href="mailto:support@tradingcafeindia.com">support@tradingcafeindia.com</a>
+                                        </p>
+                                    </aside>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="container">
+                <div class="copyright">
+                    <div class="row">
+                        <div class="col-md-12 text-center mb-3 mb-md-0">
+                            Copyright © 2022 All Rights Reserved.
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+
+        <!-- Back to Top -->
+        <a href="#" class="btn btn-lg btn-primary btn-lg-square back-to-top">
+            <i class="bi bi-arrow-up"></i>
+        </a>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Optional JavaScript; choose one of the two! -->
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+        crossorigin="anonymous"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <script src="https://nightly.datatables.net/js/jquery.dataTables.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.15.2/moment.min.js"></script>
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.js"></script>
+
+    <script src="js/scanner.js"></script>
+    <script src="js/Data.js"></script>
+    <script src="js/calculator.js"></script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-JXEJS4E6B0"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-JXEJS4E6B0');
+    </script>
+
+</body>
+
+</html>
