@@ -141,10 +141,11 @@ function showdropdown() {
 function Highest_Delivery_Nifty_Chart() {
     var table = document.getElementById('HDdataniftyonly')
     $.ajax({
-        method: 'POST',
-        url: 'https://students.tradingcafeindia.com/calcApi2/fetch_hd_data_n500',
+        method: 'GET',
+        url: 'http://localhost/scanner_Final_Update_Github/API/fetch_hd_data_n500.txt',
         success: function (response) {
-            hddatanifty = response
+            hddatanifty = JSON.parse(response)
+            response = JSON.parse(response)
             // $("#HDniftytimestamp").text(moment(hddatanifty[0][4] * 1000).format('ddd MMM DD, YYYY') + " (IST) ");
             hd_data_n500 = []
             for (var j = 0; j < response.length; j++) {
@@ -179,10 +180,11 @@ function Highest_Delivery_Nifty_Chart() {
 function Highest_Delivery_FO_Chart() {
     var table = document.getElementById('HDdatafandoonly')
     $.ajax({
-        method: 'POST',
-        url: 'https://students.tradingcafeindia.com/calcApi2/fetch_hd_data_fno',
+        method: 'GET',
+        url: 'http://localhost/scanner_Final_Update_Github/API/fetch_hd_data_fno.txt',
         success: function (response) {
-            hddatafando = response
+            hddatafando = JSON.parse(response)
+            response = JSON.parse(response)
             $("#HDfandotimestamp").text(moment(hddatafando[0][4] * 1000).format('ddd MMM DD, YYYY') + " (IST) ");
             hd_data_fno = []
             for (var j = 0; j < response.length; j++) {
@@ -216,9 +218,10 @@ function Highest_Delivery_FO_Chart() {
 function Delivery_Spike_Nifty_Chart() {
     var table = document.getElementById('DSdataniftyonly')
     $.ajax({
-        method: 'POST',
-        url: 'https://students.tradingcafeindia.com/calcApi2/fetch_dsp_data_n500',
+        method: 'GET',
+        url: 'http://localhost/scanner_Final_Update_Github/API/fetch_dsp_data_n500.txt',
         success: function (response) {
+            response = JSON.parse(response)
             dsp_data_n500 = []
             for (var j = 0; j < response.length; j++) {
                 var x = parseFloat(response[j][5])
@@ -251,9 +254,10 @@ function Delivery_Spike_Nifty_Chart() {
 function Delivery_Spike_FO_Chart() {
     var table = document.getElementById('DSdatafandoonly')
     $.ajax({
-        method: 'POST',
-        url: 'https://students.tradingcafeindia.com/calcApi2/fetch_dsp_data_fno',
+        method: 'GET',
+        url: 'http://localhost/scanner_Final_Update_Github/API/fetch_dsp_data_fno.txt',
         success: function (response) {
+            response = JSON.parse(response)
             $("#DeliverySpikeTimestamp").text(moment(response[0][4] * 1000).format('ddd MMM DD, YYYY') + " (IST) ");
             dsp_data_fno = []
             for (var j = 0; j < response.length; j++) {

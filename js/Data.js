@@ -43,9 +43,10 @@ function showdata() {
 
 fetch_data = () => {
     $.ajax({
-        method: 'POST',
-        url: 'https://students.tradingcafeindia.com/calcApi/fetch_fii_dii_data',
+        method: 'GET',
+        url: 'http://localhost/scanner_Final_Update_Github/API/fetch_fii_dii_data.txt',
         success: function (response) {
+            response = JSON.parse(response)
             myArrayone = response
             In_Market_appendData();
             FII_NET_appendData();
