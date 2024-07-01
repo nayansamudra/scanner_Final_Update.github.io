@@ -44,7 +44,7 @@ function showdata() {
 fetch_data = () => {
     $.ajax({
         method: 'GET',
-        url: 'http://localhost/scanner_Final_Update_Github/API/fetch_fii_dii_data.txt',
+        url: 'https://nayansamudra.github.io/scanner_Final_Update.github.io/API/fetch_fii_dii_data.txt',
         success: function (response) {
             response = JSON.parse(response)
             myArrayone = response
