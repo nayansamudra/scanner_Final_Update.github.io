@@ -142,7 +142,7 @@ function Highest_Delivery_Nifty_Chart() {
     var table = document.getElementById('HDdataniftyonly')
     $.ajax({
         method: 'GET',
-        url: 'https://nayansamudra.github.io/scanner_Final_Update.github.io/API/fetch_hd_data_n500.txt',
+        url: 'http://localhost/scanner_Final_Update_Github/API/fetch_hd_data_n500.txt',
         success: function (response) {
             hddatanifty = JSON.parse(response)
             response = JSON.parse(response)
@@ -181,7 +181,7 @@ function Highest_Delivery_FO_Chart() {
     var table = document.getElementById('HDdatafandoonly')
     $.ajax({
         method: 'GET',
-        url: 'https://nayansamudra.github.io/scanner_Final_Update.github.io/API/fetch_hd_data_fno.txt',
+        url: 'http://localhost/scanner_Final_Update_Github/API/fetch_hd_data_fno.txt',
         success: function (response) {
             hddatafando = JSON.parse(response)
             response = JSON.parse(response)
@@ -219,7 +219,7 @@ function Delivery_Spike_Nifty_Chart() {
     var table = document.getElementById('DSdataniftyonly')
     $.ajax({
         method: 'GET',
-        url: 'https://nayansamudra.github.io/scanner_Final_Update.github.io/API/fetch_dsp_data_n500.txt',
+        url: 'http://localhost/scanner_Final_Update_Github/API/fetch_dsp_data_n500.txt',
         success: function (response) {
             response = JSON.parse(response)
             dsp_data_n500 = []
@@ -255,7 +255,7 @@ function Delivery_Spike_FO_Chart() {
     var table = document.getElementById('DSdatafandoonly')
     $.ajax({
         method: 'GET',
-        url: 'https://nayansamudra.github.io/scanner_Final_Update.github.io/API/fetch_dsp_data_fno.txt',
+        url: 'http://localhost/scanner_Final_Update_Github/API/fetch_dsp_data_fno.txt',
         success: function (response) {
             response = JSON.parse(response)
             $("#DeliverySpikeTimestamp").text(moment(response[0][4] * 1000).format('ddd MMM DD, YYYY') + " (IST) ");

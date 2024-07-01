@@ -1778,7 +1778,7 @@ $(document).ready(function () {
         })
     }
 
-    var options = {
+    var options_cagr = {
         tooltip: {
             enabled: false,
             onDatasetHover: {
@@ -1833,10 +1833,10 @@ $(document).ready(function () {
         }
 
     }
-    chart = new ApexCharts(document.querySelector("#CAGRchart"), options);
+    chart = new ApexCharts(document.querySelector("#CAGRchart"), options_cagr);
     chart.render();
 
-    var option = {
+    var option_reverse_cagr = {
         tooltip: {
             enabled: false,
             onDatasetHover: {
@@ -1888,11 +1888,11 @@ $(document).ready(function () {
             }
         }
     }
-    chart1 = new ApexCharts(document.querySelector("#ReverseCAGRchart"), option);
+    chart1 = new ApexCharts(document.querySelector("#ReverseCAGRchart"), option_reverse_cagr);
     chart1.render();
 
 
-    var option = {
+    var option_sip = {
         tooltip: {
             enabled: false,
             onDatasetHover: {
@@ -1944,11 +1944,11 @@ $(document).ready(function () {
             }
         }
     }
-    chart_SIP = new ApexCharts(document.querySelector("#SIPchart"), option);
+    chart_SIP = new ApexCharts(document.querySelector("#SIPchart"), option_sip);
     chart_SIP.render();
 
 
-    var option = {
+    var option_emi = {
         tooltip: {
             enabled: false,
             onDatasetHover: {
@@ -2000,198 +2000,8 @@ $(document).ready(function () {
             }
         }
     }
-    chart_EMI = new ApexCharts(document.querySelector("#EMIchart"), option);
+    chart_EMI = new ApexCharts(document.querySelector("#EMIchart"), option_emi);
     chart_EMI.render();
-
-
-    var options = {
-
-        series: [],
-        chart: {
-            fontFamily: 'Outfit, sans-serif',
-            toolbar: {
-                show: false,
-            },
-            type: 'bar',
-            height: 350,
-        },
-        title: {
-            text: 'DII Net Value',
-            fontFamily: 'Outfit, sans-serif',
-            align: 'center'
-        },
-        plotOptions: {
-            bar: {
-                borderRadius: 10,
-                dataLabels: {
-                    position: 'top',
-                },
-                colors: {
-                    ranges: [{
-                        from: 0,
-                        to: 20000,
-                        color: '#008000'
-                    }, {
-                        from: -20000,
-                        to: 0,
-                        color: '#FF0000'
-                    }]
-                },
-                columnWidth: '75%',
-            }
-        },
-        dataLabels: {
-            enabled: true,
-            formatter: function (val) {
-                return '';
-            },
-            offsetY: -20,
-            style: {
-                fontSize: '14px',
-                fontFamily: 'Outfit, sans-serif',
-                colors: ["#304758"]
-            }
-        },
-        yaxis: {
-            labels: {
-                formatter: function (y) {
-                    return y.toFixed(2);
-                }
-            }
-        },
-        responsive: [
-            {
-                breakpoint: 800,
-                options: {
-                    series: []
-                }
-            }
-        ]
-    };
-    DII_NET_chart = new ApexCharts(document.querySelector("#Datachart_3"), options);
-    DII_NET_chart.render();
-
-    var options = {
-        series: [],
-        chart: {
-            fontFamily: 'Outfit, sans-serif',
-            toolbar: {
-                show: false,
-            },
-            type: 'bar',
-            height: 350,
-        },
-        title: {
-            text: 'FII Net Value',
-            fontFamily: 'Outfit, sans-serif',
-            align: 'center'
-        },
-        plotOptions: {
-            bar: {
-                borderRadius: 10,
-                dataLabels: {
-                    position: 'top',
-                },
-                colors: {
-                    ranges: [{
-                        from: 0,
-                        to: 20000,
-                        color: '#008000'
-                    }, {
-                        from: -20000,
-                        to: 0,
-                        color: '#FF0000'
-                    }]
-                },
-                columnWidth: '75%',
-            }
-        },
-        dataLabels: {
-            enabled: true,
-            formatter: function (val) {
-                return '';
-            },
-            offsetY: -20,
-            style: {
-                fontSize: '14px',
-                fontFamily: 'Outfit, sans-serif',
-                colors: ["#304758"]
-            }
-        },
-        yaxis: {
-            labels: {
-                formatter: function (y) {
-                    return y.toFixed(2);
-                }
-            }
-        },
-        responsive: [
-            {
-                breakpoint: 800,
-                options: {
-                    series: []
-                }
-            }
-        ]
-    };
-    FII_NET_chart = new ApexCharts(document.querySelector("#Datachart_2"), options);
-    FII_NET_chart.render();
-
-    var options = {
-        series: [],
-        chart: {
-            fontFamily: 'Outfit, sans-serif',
-            id: 'chart1',
-            toolbar: {
-                show: false,
-            },
-            type: 'bar',
-            height: 350,
-        },
-        title: {
-            text: 'FII + DII Net',
-            align: 'center',
-            fontFamily: 'Outfit, sans-serif',
-        },
-        plotOptions: {
-            bar: {
-                borderRadius: 10,
-                dataLabels: {
-                    position: 'top',
-                },
-                colors: {
-                    ranges: [{
-                        from: 0,
-                        to: 20000,
-                        color: '#008000'
-                    }, {
-                        from: -20000,
-                        to: 0,
-                        color: '#FF0000'
-                    }]
-                },
-                columnWidth: '75%',
-            }
-        },
-
-        yaxis: {
-            labels: {
-                formatter: function (y) {
-                    return y.toFixed(2);
-                }
-            }
-        },
-        responsive: [
-            {
-                breakpoint: 800,
-                options: {
-                    series: []
-                }
-            }
-        ]
-    };
-    In_Market_chart = new ApexCharts(document.querySelector("#Datachart_1"), options);
-    In_Market_chart.render();
 
 
     jQuery(".dropdown_hover div").click(function (event) {
